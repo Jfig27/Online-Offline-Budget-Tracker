@@ -3,9 +3,10 @@ const FILES_TO_CACHE = [
   '/index.html',
   '/manifest.webmanifest',
   '/styles.css',
-  '/dist/main.bundle.js',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
+  '/indexedDb.js',
+  '/index.js'
 ];
 
 const CACHE_NAME = "static-cache-v2";
@@ -16,7 +17,7 @@ self.addEventListener("install", function(evt) {
 console.log("installing...")
   evt.waitUntil(
     //pre caching
-    console.log("installing"),
+    console.log("installing!"),
     caches.open(CACHE_NAME).then(cache => {
       console.log("Your files were pre-cached successfully!");
       return cache.addAll(FILES_TO_CACHE);
