@@ -2,7 +2,7 @@ const FILES_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
-  '/style.css',
+  '/styles.css',
   '/dist/main.bundle.js',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
@@ -13,9 +13,10 @@ const DATA_CACHE_NAME = "data-cache-v1";
 
 // install
 self.addEventListener("install", function(evt) {
-
+console.log("installing...")
   evt.waitUntil(
     //pre caching
+    console.log("installing"),
     caches.open(CACHE_NAME).then(cache => {
       console.log("Your files were pre-cached successfully!");
       return cache.addAll(FILES_TO_CACHE);
